@@ -8,18 +8,21 @@ let city = {
 
 };
 
-function Hello(){
+function Hello(props){
+  console.log(Object.keys(props));
   return (
     <div>
-      <h1>Welocme to app</h1>
-      <p>again hello</p>
+      <h1>Welocme to {props.library}</h1>
+      <p>{props.message}</p>
+      <p>{props.number}</p>
+      <p>{Object.keys(props).length}</p>
     </div>
 
   )
 }
 
 ReactDOM.render(
- <Hello/>
+ <Hello library='Ambalangoda' message='hellooooo' number={8}/>
  ,
   document.getElementById('root')
 );
