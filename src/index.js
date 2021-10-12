@@ -8,11 +8,18 @@ let city = {
 
 };
 
-ReactDOM.render(
- <h1 id="heading" className="cool-text">
-   {city.name} is in {city.country}
- </h1>
+function Hello(){
+  return (
+    <div>
+      <h1>Welocme to app</h1>
+      <p>again hello</p>
+    </div>
 
+  )
+}
+
+ReactDOM.render(
+ <Hello/>
  ,
   document.getElementById('root')
 );
