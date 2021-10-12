@@ -14,7 +14,13 @@ function Lake(props){
 }
 
 function App(){
-  return <Lake name='hello how are you'></Lake>
+  return (
+    <div>
+    <Lake name='hello how are you'/>
+    <Lake name='xxxx'/>
+    <Lake name='ppppp'/>
+    </div>
+  );
 
 }
 
