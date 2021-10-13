@@ -59,23 +59,32 @@ function App4({items}){
   );
 }
 
-function Department(){
-  return(<div><h1>This is a department</h1></div>);
+function Department({name}){
+return(<div><h1>This is a department : {name}</h1></div>);
 } 
 
-function Market(){
-  return(<h1>This is a market</h1>);
+function Market({name }){
+return(<h1>This is a market : {name}</h1>);
 } 
 
 function App5(props){
  
       if(props.value === "dep"){
-        return <Department/>;
+        return <Department name='hello'/>;
       }else if(props.value === 'market'){
-        return <Market/>;
+        return <Market name='xxx'/>;
       }
-    
   
+}
+
+function App6(props){
+  return(
+    <div>
+      {props.value=== "dep" ? (<Department name="hikz"/>) : 
+      props.value === "mar" ?  (<Market name ="ape market" /> ) : (<p>Please enter value</p>) }
+    </div>
+  );
+
 }
 
 ReactDOM.render(
@@ -83,7 +92,7 @@ ReactDOM.render(
  //<App2 items={itemList}/>,
  //<App3 items={itemObjectList}/>,
  //<App4 items={numberArray}/>,
- <App5 value="dep"/>,
+ <App6 value="deps"/>,
   document.getElementById('root')
 );
 
