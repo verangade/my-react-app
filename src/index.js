@@ -44,8 +44,8 @@ function App2(props){
 function App3({items}){
   return(
     <div>
-      {items.map( item =>( <div><div>{item.id} Fruit {item.name} </div>
-      <div>{item.id} Color : {item.color} </div></div>)) }
+      {items.map( item =>( <div key={item.id} ><div>{item.id} Fruit {item.name} </div>
+      <div> Color : {item.color} </div></div>)) }
     </div>
   );
 }
