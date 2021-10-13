@@ -10,6 +10,12 @@ let city = {
 
 const itemList = ['apple','banana','grapes'];
 
+const itemObjectList = [
+  { id:"1" , name: "Apple" , color: "Red"},
+  { id:"2" , name: "Mango" , color: "Green"},
+  { id:"3" , name: "Grapes" , color: "Purple"}
+];
+
 function Lake(props){
   return <h1>{props.name}</h1>;
 
@@ -35,9 +41,19 @@ function App2(props){
   );
 }
 
+function App3({items}){
+  return(
+    <div>
+      {items.map( item =>( <div><div>{item.id} Fruit {item.name} </div>
+      <div>{item.id} Color : {item.color} </div></div>)) }
+    </div>
+  );
+}
+
 ReactDOM.render(
  //<App/>
- <App2 items={itemList}/>,
+ //<App2 items={itemList}/>,
+ <App3 items={itemObjectList}/>,
   document.getElementById('root')
 );
 
