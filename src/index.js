@@ -50,10 +50,20 @@ function App3({items}){
   );
 }
 
+//how to add key to number of array
+const numberArray = [1,2,3,4,8,9]
+
+function App4({items}){
+  return(
+  <div>{items.map( item => <li key={item.toString()}>{item}</li>)}</div>
+  );
+}
+
 ReactDOM.render(
  //<App/>
  //<App2 items={itemList}/>,
- <App3 items={itemObjectList}/>,
+ //<App3 items={itemObjectList}/>,
+ <App4 items={numberArray}/>,
   document.getElementById('root')
 );
 
