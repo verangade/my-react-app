@@ -59,11 +59,31 @@ function App4({items}){
   );
 }
 
+function Department(){
+  return(<div><h1>This is a department</h1></div>);
+} 
+
+function Market(){
+  return(<h1>This is a market</h1>);
+} 
+
+function App5(props){
+ 
+      if(props.value === "dep"){
+        return <Department/>;
+      }else if(props.value === 'market'){
+        return <Market/>;
+      }
+    
+  
+}
+
 ReactDOM.render(
  //<App/>
  //<App2 items={itemList}/>,
  //<App3 items={itemObjectList}/>,
- <App4 items={numberArray}/>,
+ //<App4 items={numberArray}/>,
+ <App5 value="dep"/>,
   document.getElementById('root')
 );
 
