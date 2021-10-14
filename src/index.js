@@ -84,15 +84,36 @@ function App6(props){
       props.value === "mar" ?  (<Market name ="ape market" /> ) : (<p>Please enter value</p>) }
     </div>
   );
+}
+
+function Apple(){
+  return(<h1>I am Apple</h1>);
+}
+
+function Orange(){
+  return(<h1>I am Orange</h1>);
+}
+
+function App7(){
+  return(
+    <div>
+     <Apple/>
+     <Orange/>
+    </div>
+  );
 
 }
+
+const snacks = ["chips","chocobar","biscuits"];
+console.log(snacks[1]);
 
 ReactDOM.render(
  //<App/>
  //<App2 items={itemList}/>,
  //<App3 items={itemObjectList}/>,
  //<App4 items={numberArray}/>,
- <App6 value="deps"/>,
+ //<App7 />,
+ <><Orange/> <Apple/></>,
   document.getElementById('root')
 );
 
