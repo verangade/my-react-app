@@ -140,6 +140,16 @@ function App8(){
 
 }
 
+function MyCheckBox(){
+  const [checked,setChecked] = useState(false);
+
+  
+  return (<>
+    <input type="checkbox" value={checked}  onChange={ ()=> setChecked( checked => !checked) } />
+    {checked ? "Checked" : "Not checked"}
+  
+  </>);
+}
 
 ReactDOM.render(
  //<App/>
@@ -149,7 +159,8 @@ ReactDOM.render(
  //<App7 />,
  //<><Orange/> <Apple/></>,
 
-  <App8/>,
+  // <App8/>,
+  <MyCheckBox/>,
   document.getElementById('root')
 );
 
