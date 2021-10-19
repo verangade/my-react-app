@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React ,{useState,useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -142,7 +142,10 @@ function App8(){
 
 function MyCheckBox(){
   const [checked,setChecked] = useState(false);
-
+  useEffect(
+     () => { alert(`Checked: ${checked.toString()} `);
+     }
+  );
   
   return (<>
     <input type="checkbox" value={checked}  onChange={ ()=> setChecked( checked => !checked) } />
