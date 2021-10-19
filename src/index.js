@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -105,7 +105,41 @@ function App7(){
 }
 
 const snacks = ["chips","chocobar","biscuits"];
+const [m1,m2,m3] = ["car","van","lorry"];
 console.log(snacks[1]);
+console.log(m1);
+
+function App8(){
+
+  const [status ,setStatus] = useState("Opensss");
+  const [employee,setEmployee] = useState("jhon Doe");
+  const [animal,setAnimal] = useState("Jiraff");
+  const [year,setYear] = useState("1");
+  return(
+    <>
+      <div>
+          <h1>Status : {status} </h1>
+          <button onClick={ () => setStatus("Open") }> Open</button>
+
+          <button onClick={ () => setStatus("Close") }>Close</button>
+      </div>
+      <div>
+         <h1>Employee : {employee} </h1>
+          <button onClick={ () => setEmployee("Jane Doe") }>Employee</button>
+      </div>
+      <div>
+         <h1>Year : {year} </h1>
+          <button onClick={ () => setYear(year +1) }>Employee</button>
+      </div>
+      <div>
+         <h1>Animal : {animal} </h1>
+          <button onClick={ () => setAnimal("Lion") }>Employee</button>
+      </div>
+    </>
+  );
+
+}
+
 
 ReactDOM.render(
  //<App/>
@@ -113,7 +147,9 @@ ReactDOM.render(
  //<App3 items={itemObjectList}/>,
  //<App4 items={numberArray}/>,
  //<App7 />,
- <><Orange/> <Apple/></>,
+ //<><Orange/> <Apple/></>,
+
+  <App8/>,
   document.getElementById('root')
 );
 
