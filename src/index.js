@@ -176,6 +176,30 @@ function App9(){
   </>);
 }
 
+function GithubUser({user}){
+  const[data,setData] = useState(null);
+  useEffect( () =>{
+     fetch(`https://api.github.com/users/${user}`)
+     .then(res => res.json())
+     .then(setData)
+     .catch(console.error);
+  },[] );
+
+  if (data){
+    return(
+    <div>
+        <h1>{data.login}</h1>
+    </div>);
+  }
+
+    return null;
+  
+}
+
+function App10(){
+  return (<GithubUser user="verangade"/>);
+}
+
 ReactDOM.render(
  //<App/>
  //<App2 items={itemList}/>,
@@ -186,7 +210,9 @@ ReactDOM.render(
 
   // <App8/>,
  // <MyCheckBox/>,
-  <App9/>,
+ // <App9/>,
+  <App10/>,
   document.getElementById('root')
 );
+
 
