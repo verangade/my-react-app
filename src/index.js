@@ -154,6 +154,28 @@ function MyCheckBox(){
   </>);
 }
 
+function App9(){
+
+  const [val,setVal] = useState("t");
+  const [val2,setVal2] = useState("t1");
+
+  useEffect( () => {console.log(`field1 : ${val}`); },[val] );
+ // useEffect( () => {console.log(`field1 : ${val}`); },[val] );
+
+  useEffect( () => {console.log(`field2 : ${val2}`)} ,[val2] );
+
+  //console.log(val);
+  //console.log(val2);
+  return(<>
+    
+
+    Val1 : <input value={val} onChange={ e=> setVal(e.target.value)}/>
+
+    Val2 : <input  value={val2} onChange={ e=> setVal2(e.target.value)}/>
+  
+  </>);
+}
+
 ReactDOM.render(
  //<App/>
  //<App2 items={itemList}/>,
@@ -163,7 +185,8 @@ ReactDOM.render(
  //<><Orange/> <Apple/></>,
 
   // <App8/>,
-  <MyCheckBox/>,
+ // <MyCheckBox/>,
+  <App9/>,
   document.getElementById('root')
 );
 
