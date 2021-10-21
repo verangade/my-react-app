@@ -176,28 +176,38 @@ function App9(){
   </>);
 }
 
+function MyTextBox(){
+  return(
+  <>
+    <p>sssssssss</p>
+    <input type="text"/>
+  </>);
+}
+
 function GithubUser({user}){
   const[data,setData] = useState(null);
+  console.log(" user :"+user);
   useEffect( () =>{
-     fetch(`https://api.github.com/users/${user}`)
+     fetch(`https://api.github.com/users/verangade`)
      .then(res => res.json())
      .then(setData)
      .catch(console.error);
-  },[] );
+  },[]);
 
-  if (data){
+  if(data){
     return(
     <div>
         <h1>{data.login}</h1>
+        <p>{JSON.stringify(data)}</p>
     </div>);
   }
 
-    return null;
+    return "hhh";
   
 }
 
 function App10(){
-  return (<GithubUser user="verangade"/>);
+  return (<GithubUser user='verangade'/>);
 }
 
 ReactDOM.render(
